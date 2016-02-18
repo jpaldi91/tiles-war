@@ -1,0 +1,15 @@
+*.obj
+*.tlog
+*.user
+*.filters
+*.sdf
+*.pdb
+Debug/vc100.idb
+*.manifest
+Debug/SDL_Template.ilk
+*.lastbuildstate
+*.ipch
+SDL_Template.suo
+*.cache
+Debug/SDL_Template.log
+*.exe
