@@ -1,5 +1,5 @@
 t=main
-o=main.o
+o=main.o game.o map.o unit.o
 z=$(c)
 
 cflags-c =-D_REENTRANT -I/usr/include/SDL2 -I/usr/include/libdrm
@@ -11,10 +11,9 @@ debug:   cflags+=$(cflags-d)
 release: cflags+=$(cflags-r)
 
 cc =clang
-cxx=clang++
 rm=$(RM)
 make=$(MAKE)
-c=${o:.o=.cpp}
+c=${o:.o=.c}
 
 .PHONY: debug release clean
 all:      debug
@@ -26,7 +25,7 @@ zip: Makefile $(z)
 $(t): $(o)
 	$(cc) $^ $(ldlibs) -o $@
 
-$(o): %.o: %.cpp
+$(o): %.o: %.c
 	$(cc) $(cflags) -c $< -o $@
 .depend.mk: $(C) Makefile
 	$(cc) -MM $(cflags) $(c) > .depend.mk

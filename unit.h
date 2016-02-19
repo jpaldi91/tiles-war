@@ -1,16 +1,22 @@
-class unitDescriptor {
-public:
+#ifndef UNIT_H
+#define UNIT_H
+
+typedef struct unit_descriptor_t {
 	int rangeMin, rangeMax;
 	int hpMax;
 	int atk;
 	int move;
-};
+} UnitDescriptor;
 
-class unit {
+typedef struct unit_t {
 	int x, y;
 	int hp;
-	unitDescriptor* type;
+	UnitDescriptor *type;
 
-	void moveTo (int destX, int destY);
-	int takeHit (unit* atkr);
-};
+} Unit;
+
+//void moveTo (int destX, int destY);
+//int takeHit (Unit *atkr);
+
+#endif /* UNIT_H */
+
