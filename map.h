@@ -1,9 +1,8 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include <stdbool.h>
 typedef struct tile_t {
-	bool walk;
+	int walk;
 } Tile;
 
 typedef struct map_t {
